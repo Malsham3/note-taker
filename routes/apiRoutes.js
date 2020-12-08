@@ -1,11 +1,6 @@
 const savedNotes = require("../db/db.json");
-// const waitinglistData = require("../data/waitinglistData");
-
-
-// The following API routes should be created:
-
-
-
+const fs = require("fs");
+const { v4: uuidv4 } = require("uuid");
 
 module.exports = function (app) {
     
@@ -17,15 +12,25 @@ module.exports = function (app) {
     
     // POST /api/notes - Should receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client.
     app.post("/api/notes", function (req, res) {
-        console.log(req.body)
-        
+
         const note = req.body
-        //
-        savedNotes.push(note);
-        res.json(true);
-        return 
         
+        //generate an id per note.
+        note.id = uuidv4();
+
+        //adding the new note to saved notes objects array
+        savedNotes.push(note);
+
+        //re writing the db.json file with the updated savedNotes objects array.
+        fs.writeFile("./db/db.json", JSON.stringify(savedNotes))
+
+        //display the note that user created
+        res.json(note);
     });
     
     // DELETE /api/notes/:id - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique id when it's saved. In order to delete a note, you'll need to read all notes from the db.json file, remove the note with the given id property, and then rewrite the notes to the db.json file.
+
+    app.delete("/api/:id", (req, res) => {
+        const chosen = req.params.id;
+    });
 };
