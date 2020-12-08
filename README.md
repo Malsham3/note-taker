@@ -1,6 +1,24 @@
 # note-taker
 
 
+## Usage
+post gif here
+
+As seen on the demo, user is welcomed with the home page, including a "Get Started button." Once clicked, user is redirected to the notes taker / saver page. Inside the Title and Body text-fields, user types in their note and a save button appears in order to save the note. The saved note is then listed on the left hand side for future visit, or deletion using the attached delete button. 
+
+## Project description
+The goal of this project is to build an easy but effective web application that can be used to write, save, and delete notes. This web application can be used for many purposes whether it's to simply write a grocery list or write down a phone number for future reference. 
+
+The technologies used for this project are:
+- Express JS
+- Node JS
+- JSON
+- Heroku
+- UUID
+
+## License 
+ ![License](https://img.shields.io/static/v1?label=License&message=MIT&color=9cf)
+
 
 
 
