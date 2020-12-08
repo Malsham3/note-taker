@@ -1,6 +1,6 @@
 const savedNotes = require("../db/db.json");
 const fs = require("fs");
-const { v4: uuidv4 } = require("uuid");
+const uuid = require("uuid");
 
 module.exports = function (app) {
     
@@ -17,7 +17,7 @@ module.exports = function (app) {
         const note = req.body
         
         //generate an id per note.
-        note.id = uuidv4();
+        note.id = uuid.v4();
 
         //adding the new note to saved notes objects array
         savedNotes.push(note);
