@@ -38,10 +38,12 @@ module.exports = function (app) {
         const currentNotes = JSON.parse(fs.readFileSync('./db/db.json'));
 
         //remove the note with the given id property
-        const newNotes = JSON.stringify(currentNotes.filter((savedNote) => savedNote.id !== chosen));
+        const newNotes = JSON.stringify(currentNotes.filter((note) => note.id !== chosen));
 
+        //re write db.json file with updated notes
         fs.writeFileSync("./db/db.json", newNotes)
 
+        //return updated current notes.
         res.json(currentNotes)
     });
 };
