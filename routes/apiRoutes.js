@@ -29,7 +29,7 @@ module.exports = function (app) {
         res.json(savedNotes);
     });
 
-    app.delete("/api/:id", (req, res) => {
+    app.delete("/api/notes/:id", (req, res) => {
 
         //receive and save a query parameter containing the id of a note to delete.
         const chosen = req.params.id;

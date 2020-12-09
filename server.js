@@ -7,6 +7,7 @@ const PORT = 8080;
 // Middleware!
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
 // Routes
 require("./routes/apiRoutes")(app);
