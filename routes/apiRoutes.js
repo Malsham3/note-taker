@@ -37,8 +37,6 @@ module.exports = function (app) {
 
         //receive and save a query parameter containing the id of a note to delete.
         const chosen = req.params.id;
-
-        console.log(chosen)
         
         //read all the notes from the db.json file
         const currentNotes = JSON.parse(fs.readFileSync('./db/db.json'));
