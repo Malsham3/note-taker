@@ -19,5 +19,9 @@ The technologies used for this project are:
 ## License 
  ![License](https://img.shields.io/static/v1?label=License&message=MIT&color=9cf)
 
+## Links
+- [Deployed application](https://mostafa-note-taker.herokuapp.com/)
+- [GitHub Repository](https://github.com/Malsham3/note-taker)
+
 ## Questions / Contributions
 Email me at m.alsham627@gmail.com
