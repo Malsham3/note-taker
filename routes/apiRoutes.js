@@ -14,6 +14,7 @@ module.exports = function (app) {
     // POST /api/notes - Should receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client.
     app.post("/api/notes", (req, res) => {
 
+        //get the up to date notes from db.json objects array.
         const currentNotes = JSON.parse(fs.readFileSync('./db/db.json'))
 
         //receive a new note to save on the request body.
